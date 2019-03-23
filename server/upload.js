@@ -21,16 +21,31 @@ class musicClass {
      speaker:"David Wommack"
         },
         {
-            title : "praise 06",
-     description:{type: String, required:true},
-     audioUrl:{type: String,required:true},
-     speaker:{type:String,required:true},
+            title : "busysinging-49125",
+            description:"This is about Busysinging",
+            audioUrl:"/assets/busysinging-49125.mp3",
+            speaker:"David Wommack"
         },
         {
-            title : "praise 06",
-     description:{type: String, required:true},
-     audioUrl:{type: String,required:true},
-     speaker:{type:String,required:true},
+            title : "EKWUEME - Daniel Kalu",
+            description:"This is about Busysinging",
+            audioUrl:"/assets/EKWUEME - Daniel Kalu.mp3",
+            speaker:"David Wommack"
         }]
     }
+
+    async cleanDb() {
+        await Music.remove({});
+    }
+    
+    pushMusicsToDo() {
+        this.musics.forEach((music)=> {
+           const newMusic = new Music(music);
+        })
+    }
+     seedDb(){
+         this.cleanDb();
+         this.pushMusicsToDo();
+     }
 }
+modules.export = musicClass

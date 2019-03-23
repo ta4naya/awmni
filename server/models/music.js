@@ -6,7 +6,9 @@ const Schema = mongoose.Schema;
      description:{type: String, required:true},
      audioUrl:{type: String,required:true},
      speaker:{type:String,required:true},
-     
+
 
  });
+
+ module.exports = mongoose.model('Music',musicSchema);
 
